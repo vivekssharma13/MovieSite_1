@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Movie</title>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <style type="text/css">
+
+.title{
+  font-size: 20px;
+  text-shadow: 40px;
+  text-transform: uppercase;
+}
+  #Head  {
+  display: block;
+  padding-top: 50px; 
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 80px;
+  margin-top: 0;
+  transform: rotate(5deg);
+}
+
+  .container{
+    text-align: center;
+    margin:0 auto;
+  }
+
+  .poster{
+    border:3px solid black;
+    border-radius: 10px;
+    width: 40%;
+    height:500px;
+    margin-bottom: 20px;
+  }
+
+  button{
+    width: 150px;
+    height: 40px;
+    border-radius: 20px;
+  }
+  #website_name{
+    background-color: grey; 
+    height: 300px;
+    margin-bottom: 50px;
+    transform: rotate(-5deg);
+  }
+
+  </style>
+
+
+</head>
+
+<body>
+
+  <div id="website_name">
+    <img id="Head" src="https://import.mymovies.dk/img/layout/logo_b.png">
+
+  </div>
+
+  <div class="container">
+    <img class="poster" id="admin_entry" src="http://t0.gstatic.com/images?q=tbn:ANd9GcT_9nrOnN8sYfZZHJ06EIBSoEO5qjx7uHHEs6VtKNplGVuGhZuC">
+    <h3 id="name" class="title">Harry Potter and the sorcers stone</h3>
+    <p id="summary"></p>
+
+      
+    <button id="get_movie">Get Movie</button>
+    <hr>
+  </div>
+
+  <div class="container">
+    <img id="user_entry" class="poster" src="https://www.emdb.eu/img/emdb-logo.png">
+    <h3 id="user" class="title">Tile will appear here</h3>
+    
+    <button id="add_movie" class="user">Add Movie</button>
+    <hr>
+  </div>
+
+  <script type="text/javascript">
+      
+  $("#add_movie").click(function(){
+    var link=prompt("Enter movie link");
+     var nam=prompt("Enter Name!!"); 
+     $("#user_entry").attr("src",link);
+      $("#user").text(nam)});
+
+  $("#get_movie").click(function(){
+    console.log("buttonclicked")
+    var s='harry potter'
+    function apiCall(){
+      $.getJSON("https://img.omdbapi.com/?apikey=[e0620bd4]&="+ encodeURI(s)).then(function(response){
+        console.log(response.poster);
+    });
+    apiCall();
+    $("#name").text(s); 
+  }
+
+  });
+  </script>
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
